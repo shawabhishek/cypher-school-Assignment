@@ -1,0 +1,152 @@
+--->Abhishek Shaw
+
+Q1. Convert Minutes into Seconds
+
+function converts(time){
+    return (time*60);
+}
+
+console.log(converts(5));
+
+
+////////////////////////
+Q2. Divides Evenly
+
+function dividesEvenly(a,b){
+  if(a%b===0)
+   return true;
+  else
+   return false;
+}
+
+console.log(dividesEvenly(98,7));
+
+////////////////////////
+Q1. Count Instances of a Character in a String
+
+function charCount(str1,str2 ){
+    return str1.split(str2).length - 1;
+}
+
+console.log(charCount("Chamberofsecrets", "c"));
+
+///////////////////////
+Q2. Add up the Numbers from a Single Number
+
+function addUp(num){
+  var sum=0,start=0;
+  while(start<=num)
+  {
+    sum=sum+start;
+    start++;
+  }
+  return sum;
+}
+
+console.log(addUp(600));
+
+///////////////////////
+Q3. Replace Vowel with Another Character
+
+function LetterChanges(text) {
+    var s = text.split('');
+    for (var i = 0; i < s.length; i++) {
+        switch(s[i]) {
+          case 'a':
+            s[i] = '1';
+            break;
+          case 'e':     
+            s[i] = '2';
+            break;
+          case 'i':     
+            s[i] = '3';
+            break;
+          case 'o':     
+            s[i] = '4';
+            break;
+          case 'u':     
+            s[i] = '5';
+            break;
+          default:
+        }
+    }
+     return s.join('');
+}
+
+console.log(LetterChanges("chembur"));
+
+////////////////////////////
+Q1. Reverse Words Starting with a Particular Letter
+
+specialReverse = (input, s) => {
+    let ar = input.split(" ")
+    for (let i = 0; i < ar.length; i++) {
+        if(ar[i].charAt(0) === s){
+            let rev = []
+            for (let index = ar[i].length-1; index >= 0; index--) {
+                rev.push(ar[i][index])
+            }
+            ar[i] = rev.join('')
+        } 
+    }
+    return ar.join(" ")
+}
+
+console.log(specialReverse("word searches are super fun","s"))
+
+////////////////////////////
+Q2. Hitting the Jackpot
+
+function Testjackpot(array){
+var result = true;
+var j=1;
+for (let i = 0; i < array.length-1; i++) {
+    if (array[i]!==array[j]) {
+        result = false
+        break;
+    }
+    j++;
+}
+return result;
+}
+console.log(Testjackpot(["Ss","Ss","Ss","Ss"]));
+
+///////////////////////////
+Q3. Remove Duplicates from an Array
+
+function unique(array) {
+   return Array.from(new Set(array));
+}
+
+console.log(unique([0,1,0,1]))
+
+//////////////////////////
+Q1. Get Real Type
+
+function Realtype(a){
+   var toString = Object.prototype.toString;
+   return(toString.call(a));
+}
+
+console.log(Realtype([]));
+console.log(Realtype(5));
+console.log(Realtype(true));
+console.log(Realtype("a"));
+console.log(Realtype(null));
+
+/////////////////////////
+Q2. Numbers in Strings
+
+isAlpha = (element) => {
+    var letters = /^[A-Za-z]+$/;
+    return element.match(letters) ? true : false
+}
+
+numInStr = (arr) => {
+    return arr.filter((element) => {
+        return !isAlpha(element)
+    })
+}
+
+console.log(numInStr(["a1","a","2b","b"]))
+
